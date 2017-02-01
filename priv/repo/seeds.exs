@@ -1,11 +1,10 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     MmoneyApi.Repo.insert!(%MmoneyApi.SomeModel{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias MmoneyApi.Repo
+alias MmoneyApi.User
+
+[
+  %User{
+    name: "Demo User",
+    email: "demo@mmoney.app",
+    password: nil
+  }
+] |> Enum.each(&Repo.insert!(&1))

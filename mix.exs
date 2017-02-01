@@ -18,7 +18,7 @@ defmodule MmoneyApi.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {MmoneyApi, []},
-     applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
+     applications: [:corsica, :phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex]]
   end
 
@@ -35,7 +35,10 @@ defmodule MmoneyApi.Mixfile do
      {:phoenix_ecto, "~> 3.0"},
      {:postgrex, ">= 0.0.0"},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:ja_serializer, "~> 0.11.2"},
+     {:cowboy, "~> 1.0"},
+     {:plug, "~> 1.0"},
+     {:corsica, "~> 0.5"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

@@ -36,5 +36,8 @@ defmodule MmoneyApi.Endpoint do
     key: "_mmoney_api_key",
     signing_salt: "04q/7UsG"
 
+  # change origin before deploy to prod
+  plug Corsica, origins: "*", allow_headers: ["accept", "content-type"]
+
   plug MmoneyApi.Router
 end
